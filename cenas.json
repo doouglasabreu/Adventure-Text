@@ -21,7 +21,7 @@
 		"id": 2,
 		"titulo": "Arvore",
 
-		"descricao": "Voce consegue ver o mar ha alguns metros de distancia. Este lugar parece se tratar de uma ilha deserta. Acidentalmente o galho onde voce estava 					apoiado quebrou. Então voce caiu no chao e fraturou as duas pernas. Ficando impossibilitado de andar, voce fica ali durante dias e morre de 					fome. GAME OVER." ,
+		"descricao": "Voce consegue ver o mar ha alguns metros de distancia. Este lugar parece se tratar de uma ilha deserta. Acidentalmente o galho onde voce estava apoiado quebrou. Então voce caiu no chao e fraturou as duas pernas. Ficando impossibilitado de andar, voce fica ali durante dias e morre de fome. GAME OVER." ,
 
 		"itens": []
 	},
@@ -29,7 +29,7 @@
 		"id": 3,
 		"titulo": "Galhos e Pedras",
 
-		"descricao": "Voce volta do aviao e percebe que esta anoitecendo. E necessario fazer uma fogueira antes que a noite chege. Voce olha pro chao e so ve GALHOS 					secos  e algumas PEDRAS." ,
+		"descricao": "Voce volta do aviao e percebe que esta anoitecendo. E necessario fazer uma fogueira antes que a noite chege. Voce olha pro chao e so ve GALHOS secos  e algumas PEDRAS." ,
 
 		"itens": ["GALHOS", "PEDRAS"]
 	},
@@ -53,7 +53,7 @@
 		"id": 6,
 		"titulo": "Amanita phalloides",
 
-		"descricao": "Infelizmente você comeu um cogumelo da um cogumelo da especie Amanita phalloides , e alguns minutos depois, apos algumas alucinacoes voce veio a 					obito. FIM" ,
+		"descricao": "Infelizmente você comeu um cogumelo da um cogumelo da especie Amanita phalloides , e alguns minutos depois, apos algumas alucinacoes voce veio a	obito. FIM" ,
 
 		"itens": []
 	},
@@ -69,7 +69,7 @@
 		"id": 8,
 		"titulo": "O Sinal",
 
-		"descricao": "Voce conseguiu uma fonte de alimento segura e a degustou. Voce comeca a ouvir barulhos semelhantes a de um helicoptero e possui apenas 1 					recarga para seu SINALIZADOR" ,
+		"descricao": "Voce conseguiu uma fonte de alimento segura e a degustou. Voce comeca a ouvir barulhos semelhantes a de um helicoptero e possui apenas 1 recarga para seu SINALIZADOR" ,
 
 		"itens": []
 	},
@@ -85,7 +85,7 @@
 		"id": 11,
 		"titulo": "O Final",
 
-		"descricao": "Voce adquiriu alguns ferimentos em toda essa aventura e precisa de cuidados medicos entao o piloto avisa sua posicao no radio para verificacao do 			local  e o leva para a cidade mais proxima ! PRONTO VOCE COMPLETOU O DESAFIO DA FLORESTA !" ,
+		"descricao": "Voce adquiriu alguns ferimentos em toda essa aventura e precisa de cuidados medicos entao o piloto avisa sua posicao no radio para verificacao do local  e o leva para a cidade mais proxima ! PRONTO VOCE COMPLETOU O DESAFIO DA FLORESTA !" ,
 
 		"itens": []
 	}
