@@ -37,7 +37,7 @@
 		"id": 4,
 		"titulo": "Fogueira",
 
-		"descricao": "Voce consegue produzir faiscas com suas Pedras e Galhos . Consequentemente voce conseguiu produzir uma fogueira com essas faiscas. Embora esteja 					tudo muito agradavel voce começa a sentir fome e SONO, ao seu redor existe plantas que se parecem com COGUMELOS" ,
+		"descricao": "Voce consegue produzir faiscas com suas Pedras e Galhos . Consequentemente voce conseguiu produzir uma fogueira com essas faiscas. Embora esteja tudo muito agradavel voce começa a sentir fome e SONO, ao seu redor existe plantas que se parecem com COGUMELOS" ,
 
 		"itens": ["SONO", "COGUMELOS"]
 	},
