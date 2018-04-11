@@ -1,6 +1,6 @@
-{
-"cenas": 
-[
+﻿{
+	"cenas": [
+
 	{
 		"id": 0,
 		"titulo": "O comeco",
@@ -89,5 +89,5 @@
 
 		"itens": []
 	}
-]
+		]
 }

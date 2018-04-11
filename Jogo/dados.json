@@ -1,0 +1,31 @@
+[
+	{
+		"id": 0,
+		"titulo": "O comeco",
+
+		"descricao": "Voce acordou em um local com bastante ARVORES ao redor e em seu lado so ha destrocos de um AVIAO." ,
+
+		"itens": ["AVIAO", "ARVORE"]
+	},
+	{
+		"id": 1,
+		"titulo": "Inspecionando Aviao",
+
+		"descricao": "Voce se aproxima dos destrocos do aviao, parece que nao ha ninguem vivo alem de voce. Voce tambem encontra um SINALIZADOR." ,
+
+		"itens": ["SINALIZADOR"]
+	},
+	{
+		"id": 2,
+		"titulo": "Arvore",
+
+		"descricao": "Voce consegue ver o mar ha alguns metros de distancia. Este lugar parece se tratar de uma ilha deserta. Acidentalmente o galho onde voce estava apoiado quebrou. Então voce caiu no chao e fraturou as duas pernas. Ficando impossibilitado de andar, voce fica ali durante dias e morre de fome. GAME OVER." ,
+
+		"itens": [
+			{
+				"id": 78,
+				"nome": "jjgjhg j"
+			}
+		]
+	}
+]
