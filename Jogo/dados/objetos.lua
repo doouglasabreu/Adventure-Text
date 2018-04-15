@@ -130,11 +130,7 @@ objetos = {
 			cena_alvo= 4,
 			resolvido= false,
 			obtido= true
-		},
-
-
-
-
+		}
 
 }
 

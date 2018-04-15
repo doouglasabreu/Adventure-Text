@@ -5,6 +5,8 @@ json = require 'json'
 
 local inventario = {}
 
+
+
 ---------------- Começo do jogo-----------------
 
 local i = 1; --- I = CENA ATUAL

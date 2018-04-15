@@ -2,6 +2,8 @@ json = require 'json'
 
 local open = io.open
 
+
+
 local function read_file(path)
     local file = open(path, "rb") -- r read mode and b binary mode
     if not file then return nil end
@@ -10,9 +12,8 @@ local function read_file(path)
     return content
 end
 
-local fileContent = read_file("dados.json");
+local fileContent = read_file("./cenas.json")
 
+local decode = json.decode(fileContent)
 
-local res = json.decode(fileContent)
-
-print(res[3].itens[1].id)
+print(decode)
