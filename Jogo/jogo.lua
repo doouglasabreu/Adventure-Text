@@ -1,10 +1,7 @@
-cenas = require './dados/cenas'
-objetos = require './dados/objetos'
-
-json = require 'json'
+json_to_table = require 'teste'
+cenas = json_to_table.read_json("./dados/cenas.json")
 
 local inventario = {}
-
 
 
 ---------------- Começo do jogo-----------------
@@ -17,19 +14,19 @@ local i = 1; --- I = CENA ATUAL
 
 		print(cenas[i].descricao)
 
-		local comando_correto = false;
+		comando_correto = false;
 		while not comando_correto do
-			local comando = io.read()
+			comando = io.read()
 			for k, v in pairs(cenas[i].itens) do
-
-				if objetos[v].comando_correto == comando then
-					if i ~= objetos[v].cena_alvo then
-						i = objetos[v].cena_alvo
+				if v.comando_correto == comando then
+					if i ~= v.cena_alvo then
+						i = v.cena_alvo
+						print(i)
 						comando_correto = true
 					end
-					print(objetos[v].resultado_positivo)
+					print(v.resultado_positivo)
 
-					if objetos[v].tipo == 1 then
+					if v.tipo == 1 then
 						table.insert(inventario, v)
 					end
 
