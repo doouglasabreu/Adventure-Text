@@ -25,7 +25,7 @@
 				"descricao": "Esta arvore parece um pouco velha e escorregadia.",
 				"resultado_positivo": "Voce subiu na arvore. Acidentalmente o galho onde voce estava apoiado quebrou. Então voce caiu no chao e fraturou as duas pernas. Ficando impossibilitado de andar, voce fica ali durante dias e morre de fome.",
 				"resultado_negativo": "",
-				"comando_correto": "use ARVORE",
+				"comando_correto": "use ARVORES",
 				"cena_alvo": -1,
 				"resolvido": false,
 				"obtido": false
@@ -182,8 +182,8 @@
 				"descricao": "A corda parece segura",
 				"resultado_positivo": "Voce está seguro agora porém adquiriu alguns ferimentos em toda essa aventura e precisa de cuidados medicos.",
 				"resultado_negativo": "",
-				"comando_correto": "",
-				"cena_alvo": 1000,
+				"comando_correto": "use CORDA",
+				"cena_alvo": 9,
 				"resolvido": false,
 				"obtido": true
 			}
