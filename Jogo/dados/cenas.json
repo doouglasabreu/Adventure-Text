@@ -1,7 +1,7 @@
 [
 	{
 		"id": 1,
-		"titulo": 'O comeco',
+		"titulo": "O comeco",
 
 		"descricao": "Voce acordou em um local com bastante ARVORES ao redor e em seu lado so ha destrocos de um AVIAO.",
 
@@ -21,7 +21,7 @@
 			{
 				"id": 1,
 				"tipo": 0,
-				"nome": "ARVORE",
+				"nome": "ARVORES",
 				"descricao": "Esta arvore parece um pouco velha e escorregadia.",
 				"resultado_positivo": "Voce subiu na arvore. Acidentalmente o galho onde voce estava apoiado quebrou. Então voce caiu no chao e fraturou as duas pernas. Ficando impossibilitado de andar, voce fica ali durante dias e morre de fome.",
 				"resultado_negativo": "",
@@ -41,7 +41,7 @@
 				"id": 10,
 				"tipo": 0,
 				"nome": "SINALIZADOR",
-				"descricao": "É um sinalizador maritimo",
+				"descricao": "E uma pistola sinalizadora",
 				"resultado_positivo": "Voce pegou o sinalizador.",
 				"resultado_negativo": "",
 				"comando_correto": "get SINALIZADOR",

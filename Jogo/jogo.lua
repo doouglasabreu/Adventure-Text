@@ -1,86 +1,103 @@
 json_to_table = require 'teste'
 cenas = json_to_table.read_json("./dados/cenas.json")
 
-local inventario = {}
+local function getItem(item_table, item_name)
+  for i, scene_item in pairs(item_table) do
+    if item_name == scene_item.nome then
+        return scene_item
+    end
+  end
+  return nil
+end
 
+local inventory = {}
+local cena_atual = 1
 
----------------- Começo do jogo-----------------
+while cena_atual > 0 do
 
-local i = 1; --- I = CENA ATUAL
+  print(cenas[cena_atual].descricao)
 
-	while true do
+  comando_correto = false;
+  while not comando_correto do
 
-		if i<0 then break end
+    local comando = io.read()
+    local tokens = {}
+    
+    for token in string.gmatch(comando, "[^%s]+") do
+      table.insert(tokens, token)
+    end
 
-		print(cenas[i].descricao)
+    if tokens[1] == "use" then
+      
+      if table.getn(tokens) == 2 then
+        
+        local item = getItem(cenas[cena_atual].itens, tokens[2])
+        
+        if item and item.comando_correto == comando then
+          print(item.resultado_positivo)
+          cena_atual = item.cena_alvo
+          comando_correto = true
+        else
+          print("Comando incorreto.")
+        end
+        
+      elseif table.getn(tokens) == 4 and token[3] == "with" then
+        
+        local inv_item = getItem(inventory, tokens[2])
+        local scene_item = getItem(cenas[cena_atual], tokens[4])
+        
+        if inv_item and scene_item then
+          if scene_item.comando_correto == comando then
+            cena_atual = scene_item.cena_alvo
+            comando_correto = true
+          else
+            print("Comando incorreto")
+          end
+        else
+          print("Comando incorreto")
+        end
+        
+      else
+        print("Comando incorreto")
+      end
 
-		comando_correto = false;
-		while not comando_correto do
+    elseif tokens[1] == "check" then
 
-			local comando = io.read()
-			local tokens = {}
-			for token in string.gmatch(comando, "[^%s]+") do
-				table.insert(tokens, token)
-			end
+      item = getItem(cenas[cena_atual].itens, tokens[2])
+      
+      if item then
+        print(item.descricao)
+      else
+        print("Comando incorreto")
+      end
 
-			if tokens[1] == "use" then
+    elseif tokens[1] == "get" then
 
-				if table.getn(tokens) == 2 then
+      item = getItem(cenas[cena_atual].itens, tokens[2])
+      if item  and comando == item.comando_correto then
+        table.insert(inventory, item)
+        
+      else
+        print("Comando incorreto")
+      end
 
-					for k, v in pairs(cenas[i].itens) do
-						if comando == v.comando_correto then
-								i = v.cena_alvo
-								comando_correto = true
-								break;
-						end
-					end
+    elseif comando == "inventory" then
 
-				elseif table.getn(tokens) == 4 and token[3] == "with" then
+      if next(inventory) == nil then
+        print("Inventario vazio")
+      else
+        for k, v in pairs(inventory) do
+          print(v.nome)
+        end
+      end
 
-					for p, q in pairs(cenas[i].itens) do
-						for k, v in pairs(inventario) do
-							if q.nome == v.nome then
-								i = q.cena_alvo
-								table.remove(table, k)
-								comando_correto = true
-							end
-						end
-					end
-				end
+    else
+      print("Comando incorreto")
+    end
 
-			elseif tokens[1] == "check" then
+  end
 
-				for k, v in pairs(cenas[i].itens) do
-					if tokens[2] == v.nome then
-						print(v.descricao)
-					end
-				end
+end
 
-			elseif tokens[1] == "get" then
-
-				for k, v in pairs(cenas[i].itens) do
-					if tokens[2] == v.nome then
-						table.insert(inventario, v)
-					end
-				end
-
-			elseif comando == "inventory" then
-
-				if inventory then
-					for k, v in pairs(inventory) do
-						print(v.nome)
-					end
-				else
-					print("Inventario vazio")
-				end
-
-			else
-				print("Comando incorreto")
-			end
-
-		end
-
-	end
-
-	print("FIM DE JOGO");
+print("FIM DE JOGO");
 

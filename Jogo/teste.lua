@@ -1,4 +1,4 @@
-json = require 'json'
+json = require './lib/json'
 
 json_to_table = {}
 
