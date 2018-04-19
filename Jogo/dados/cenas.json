@@ -2,9 +2,7 @@
 	{
 		"id": 1,
 		"titulo": "O comeco",
-
-		"descricao": "Voce acordou em um local com bastante ARVORES ao redor e em seu lado so ha destrocos de um AVIAO.",
-
+		"descricao": "Voce acordou em um local com bastante ARVORES ao redor, parece se tratar de uma floresta. Em seu lado so ha destrocos de um AVIAO.",
 		"itens": [
 			{
 				"id": 0,
@@ -23,7 +21,7 @@
 				"tipo": 0,
 				"nome": "ARVORES",
 				"descricao": "Esta arvore parece um pouco velha e escorregadia.",
-				"resultado_positivo": "Voce subiu na arvore. Acidentalmente o galho onde voce estava apoiado quebrou. Então voce caiu no chao e fraturou as duas pernas. Ficando impossibilitado de andar, voce fica ali durante dias e morre de fome.",
+				"resultado_positivo": "Voce subiu na arvore. Acidentalmente o galho onde voce estava apoiado quebrou. Então voce caiu no chao e sofreu uma fratura nas pernas. Impossibilitado de andar, voce fica ali durante dias e morre de fome.",
 				"resultado_negativo": "",
 				"comando_correto": "use ARVORES",
 				"cena_alvo": -1,
@@ -35,16 +33,28 @@
 	{
 		"id": 2,
 		"titulo": "Inspecionando Aviao",
-		"descricao": "Parece que nao ha ninguem vivo aqui alem de voce. Voce tambem encontra um SINALIZADOR com duas recargas." ,
+		"descricao": "Parece que nao ha ninguem vivo aqui alem de voce. Ha uma porta que da acesso ao BANHEIRO e outra que da acesso a CABINE do piloto.",
 		"itens": [
 			{
-				"id": 10,
+				"id": 3,
 				"tipo": 0,
-				"nome": "SINALIZADOR",
-				"descricao": "E uma pistola sinalizadora",
-				"resultado_positivo": "Voce pegou o sinalizador.",
+				"nome": "CABINE",
+				"descricao": "Esta aberta",
+				"resultado_positivo": "Voce entrou na CABINE.",
 				"resultado_negativo": "",
-				"comando_correto": "get SINALIZADOR",
+				"comando_correto": "use CABINE",
+				"cena_alvo": 4,
+				"resolvido": false,
+				"obtido": false
+			},
+			{
+				"id": 4,
+				"tipo": 0,
+				"nome": "BANHEIRO",
+				"descricao": "Usta aberta",
+				"resultado_positivo": "Voce entrou no BANHEIRO.",
+				"resultado_negativo": "",
+				"comando_correto": "use BANHEIRO",
 				"cena_alvo": 3,
 				"resolvido": false,
 				"obtido": true
@@ -53,50 +63,120 @@
 	},
 	{
 		"id": 3,
-		"titulo": "Galhos e Pedras",
-
-		"descricao": "Voce volta do aviao e percebe que esta anoitecendo. E necessario fazer uma fogueira antes que a noite chege. Voce olha pro chao e ve algumas PEDRAS." ,
-
+		"titulo": "Banheiro",
+		"descricao": "Dentro do banheiro voce encontra uma PISTOLA no chao. Tambem ha a PORTA para sair do banheiro.",
 		"itens": [
 			{
-				"id": 3,
-				"tipo": 1,
-				"nome": "PEDRAS",
-				"descricao": "Apenas 2 pedras comun",
-				"resultado_positivo": "Voce pegou as pedras.",
+				"id": 5,
+				"tipo": 0,
+				"nome": "PISTOLA",
+				"descricao": "tem uma bala",
+				"resultado_positivo": "Voce pegou a PISTOLA",
+				"resultado_negativo": "Voce ja possui este item",
+				"comando_correto": "get PISTOLA",
+				"cena_alvo": 3,
+				"resolvido": false,
+				"obtido": false
+			},
+			{
+				"id": 6,
+				"tipo": 0,
+				"nome": "PORTA",
+				"descricao": "Usta aberta",
+				"resultado_positivo": "Voce saiu do BANHEIRO.",
 				"resultado_negativo": "",
-				"comando_correto": "get PEDRAS",
-				"cena_alvo": 9,
+				"comando_correto": "use PORTA",
+				"cena_alvo": 2,
 				"resolvido": false,
 				"obtido": true
 			}
 		]
 	},
-	{
+  {
 		"id": 4,
-		"titulo": "Fogueira",
-
-		"descricao": "Embora esteja tudo muito agradavel voce começa a sentir fome e SONO, ao seu redor existe plantas que se parecem com COGUMELOS" ,
-
+		"titulo": "Inspecionando a Cabine",
+		"descricao": "Dentro da cabine ha a PORTA para sair e no chao voce ve um SINALIZADOR." ,
+		"itens": [
+      		{
+				"id": 7,
+				"tipo": 0,
+				"nome": "SINALIZADOR",
+				"descricao": "E um sinalizador",
+				"resultado_positivo": "Voce pegou o sinalizador.",
+				"resultado_negativo": "Voce ja possui este item",
+				"comando_correto": "get SINALIZADOR",
+				"cena_alvo": 4,
+				"resolvido": false,
+				"obtido": true
+			},
+			{
+				"id": 8,
+				"tipo": 0,
+				"nome": "PORTA",
+				"descricao": "Porta para sair do aviao",
+				"resultado_positivo": "Voce saiu do aviao.",
+				"resultado_negativo": "",
+				"comando_correto": "use PORTA",
+				"cena_alvo": 5,
+				"resolvido": false,
+				"obtido": false
+			}
+    	]
+	},
+	{
+		"id": 5,
+		"titulo": "Galhos e Pedras",
+		"descricao": "Voce volta do aviao e percebe que esta anoitecendo. E necessario alguma fonte de luz para espantar os animais selvagens. Voce olha pro chao e ve algumas PEDRAS e alguns GALHOS secos." ,
 		"itens": [
 			{
-				"id": 4,
+				"id": 9,
+				"tipo": 1,
+				"nome": "PEDRAS",
+				"descricao": "Apenas 2 pedras comuns",
+				"resultado_positivo": "Voce pegou as pedras.",
+				"resultado_negativo": "Voce ja possui este item",
+				"comando_correto": "get PEDRAS",
+				"cena_alvo": 5,
+				"resolvido": false,
+				"obtido": true
+			},
+			{
+				"id": 10,
+				"tipo": 0,
+				"nome": "GALHOS",
+				"descricao": "Esses galhos estão secos ",
+				"resultado_positivo": "Voce conseguiu fazer uma fogueira.",
+				"resultado_negativo": "",
+				"comando_correto": "use PEDRAS with GALHOS",
+				"cena_alvo": 6,
+				"resolvido": false,
+				"obtido": false
+			}
+		]
+	},
+	{
+		"id": 6,
+		"titulo": "Fogueira",
+		"descricao": "Voce começa a sentir fome e SONO, ao seu redor existe plantas que se parecem com COGUMELOS" ,
+		"itens": [
+			{
+				"id": 11,
 				"tipo": 0,
 				"nome": "SONO",
 				"descricao": "Voce está exausto",
 				"resultado_positivo": "Voce se aproximou da fogueira e dormiu.",
 				"resultado_negativo": "",
 				"comando_correto": "use SONO",
-				"cena_alvo": 5,
+				"cena_alvo": 7,
 				"resolvido": false,
 				"obtido": true
 			},
 			{
-				"id": 5,
+				"id": 12,
 				"tipo": 0,
 				"nome": "COGUMELO",
 				"descricao": "Esses cogumelos parecem serem venenosos",
-				"resultado_positivo": "Infelizmente você comeu um cogumelo da um cogumelo da especie Amanita phalloides , e alguns minutos depois, apos algumas alucinacoes voce veio a óbito. FIM.",
+				"resultado_positivo": "Infelizmente você comeu um cogumelo da um cogumelo venenoso , e alguns minutos depois, apos algumas alucinacoes voce veio a óbito. FIM.",
 				"resultado_negativo": "",
 				"comando_correto": "use COGUMELOS",
 				"cena_alvo": -1,
@@ -106,84 +186,51 @@
 		]
 	},
 	{
-		"id": 5,
-		"titulo": "Segundo dia",
-
-		"descricao": "Você acordou com alguns barulhos de MACACOS e necessita urgentemente de uma fonte de alimento." ,
-
-		"itens": [
-			{
-				"id": 6,
-				"tipo": 0,
-				"nome": "MACACOS",
-				"descricao": "Esses macacos são rapidos porém estão em grande numero",
-				"resultado_positivo": "Voce conseguiu derrubar um macaco.",
-				"resultado_negativo": "",
-				"comando_correto": "use SINALIZADOR with MACACOS",
-				"cena_alvo": 6,
-				"resolvido": false,
-				"obtido": true
-			}
-		]
-	},
-	{
-		"id": 6,
-		"titulo": "Assando o Macaco",
-
-		"descricao": "sua FOGUEIRA esta quase se apagando." ,
-
-		"itens": [
-			{
-				"id": 7,
-				"tipo": 0,
-				"nome": "FOGUEIRA",
-				"descricao": "A fogueira ainda pode produzir calor por mais alguns minutos",
-				"resultado_positivo": "Voce conseguiu uma fonte de alimento segura e a degustou.",
-				"resultado_negativo": "",
-				"comando_correto": "use MACACO with FOGUEIRA",
-				"cena_alvo": 7,
-				"resolvido": false,
-				"obtido": true
-			}
-		]
-	},
-	{
 		"id": 7,
-		"titulo": "O Sinal",
-
-		"descricao": "Voce comeca a ouvir barulhos semelhantes a de um helicoptero e possui apenas 1 recarga para seu SINALIZADOR" ,
-
+		"titulo": "Segundo dia",
+		"descricao": "Você acordou com alguns barulhos de JAVALI e esta com muita fome." ,
 		"itens": [
 			{
-				"id": 8,
+				"id": 13,
 				"tipo": 0,
-				"nome": "SINALIZADOR",
-				"descricao": "É um sinalizador maritimo",
-				"resultado_positivo": "Voce conseguiu alertar o piloto que sobrevoava a area.",
+				"nome": "JAVALI",
+				"descricao": "Javali do mato",
+				"resultado_positivo": "Voce conseguiu derrubar o JAVALI.",
 				"resultado_negativo": "",
-				"comando_correto": "use SINALIZADOR",
+				"comando_correto": "use PISTOLA with JAVALI",
 				"cena_alvo": 8,
 				"resolvido": false,
 				"obtido": true
+			},
+			{
+				"id": 14,
+				"tipo": 0,
+				"nome": "JAVALI",
+				"descricao": "Javali do mato",
+				"resultado_positivo": "Voce conseguiu acertar o JAVALI que ficou enfurecido e vem em sua direçao. Parece que chegou seu fim.",
+				"resultado_negativo": "",
+				"comando_correto": "use PEDRAS with JAVALI",
+				"cena_alvo": -1,
+				"resolvido": false,
+				"obtido": true
 			}
+
 		]
 	},
 	{
 		"id": 8,
-		"titulo": "O Resgate",
-
-		"descricao": "Ele por sua vez lanca uma CORDA para voce subir a bordo." ,
-
+		"titulo": "Assando o JAVALI",
+		"descricao": "Voce se aproxima do JAVALI morto no chao. Sua FOGUEIRA esta quase se apagando." ,
 		"itens": [
 			{
-				"id": 9,
+				"id": 15,
 				"tipo": 0,
-				"nome": "CORDA",
-				"descricao": "A corda parece segura",
-				"resultado_positivo": "Voce adquiriu alguns ferimentos em toda essa aventura e precisa de cuidados medicos entao o piloto avisa sua posicao no radio para verificacao do local  e o leva para a cidade mais proxima!",
+				"nome": "FOGUEIRA",
+				"descricao": "A fogueira ainda pode produzir calor por mais alguns minutos",
+				"resultado_positivo": "Voce comeu o Javali e satisfez sua fome.",
 				"resultado_negativo": "",
-				"comando_correto": "use CORDA",
-				"cena_alvo": -1,
+				"comando_correto": "use JAVALI with FOGUEIRA",
+				"cena_alvo": 9,
 				"resolvido": false,
 				"obtido": true
 			}
@@ -191,22 +238,39 @@
 	},
 	{
 		"id": 9,
-		"titulo": "Galhos secos",
-
-		"descricao": "Ao seu redor está cheio de GALHOS secos" ,
-
+		"titulo": "O Sinal",
+		"descricao": "Voce comeca a ouvir barulhos semelhantes a de um HELICOPTERO." ,
 		"itens": [
 			{
-				"id": 2,
+				"id": 16,
 				"tipo": 0,
-				"nome": "GALHOS",
-				"descricao": "Esses galhos estão secos ",
-				"resultado_positivo": "Voce conseguiu fazer uma fogueira.",
+				"nome": "SINALIZADOR",
+				"descricao": "É um sinalizador maritimo",
+				"resultado_positivo": "Voce conseguiu alertar o piloto que sobrevoava a area.",
 				"resultado_negativo": "",
-				"comando_correto": "use PEDRAS with GALHOS",
-				"cena_alvo": 4,
+				"comando_correto": "use SINALIZADOR with HELICOPTERO",
+				"cena_alvo": 10,
 				"resolvido": false,
-				"obtido": false
+				"obtido": true
+			}
+		]
+	},
+	{
+		"id": 10,
+		"titulo": "O Resgate",
+		"descricao": "Ele por sua vez lanca uma ESCADA para voce subir a bordo." ,
+		"itens": [
+			{
+				"id": 17,
+				"tipo": 0,
+				"nome": "ESCADA",
+				"descricao": "A escada parece segura",
+				"resultado_positivo": "Voce adquiriu alguns ferimentos em toda essa aventura e precisa de cuidados medicos entao o piloto avisa sua posicao no radio para verificacao do local  e o leva para a cidade mais proxima!",
+				"resultado_negativo": "",
+				"comando_correto": "use ESCADA",
+				"cena_alvo": -1,
+				"resolvido": false,
+				"obtido": true
 			}
 		]
 	}

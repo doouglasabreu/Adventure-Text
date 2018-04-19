@@ -41,7 +41,7 @@ while cena_atual > 0 do
           print("Comando incorreto.")
         end
         
-      elseif table.getn(tokens) == 4 and token[3] == "with" then
+      elseif table.getn(tokens) == 4 and tokens[3] == "with" then
         
         local inv_item = getItem(inventory, tokens[2])
         local scene_item = getItem(cenas[cena_atual], tokens[4])
@@ -75,8 +75,12 @@ while cena_atual > 0 do
 
       item = getItem(cenas[cena_atual].itens, tokens[2])
       if item  and comando == item.comando_correto then
-        table.insert(inventory, item)
-        
+        if getItem(inventory, item.nome) then
+          print(item.resultado_negativo)
+        else
+          table.insert(inventory, item)
+          print(item.resultado_positivo)
+        end
       else
         print("Comando incorreto")
       end
@@ -86,8 +90,8 @@ while cena_atual > 0 do
       if next(inventory) == nil then
         print("Inventario vazio")
       else
-        for k, v in pairs(inventory) do
-          print(v.nome)
+        for i, item in pairs(inventory) do
+          print(item.nome)
         end
       end
 
