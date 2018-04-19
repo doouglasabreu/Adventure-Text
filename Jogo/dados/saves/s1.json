@@ -1,0 +1,1 @@
+{"cena_atual_id":2,"inventory":[{"id":5,"cena_alvo":3,"resultado_positivo":"Voce pegou a PISTOLA","tipo":0,"obtido":false,"nome":"PISTOLA","comando_correto":"get PISTOLA","resolvido":false,"descricao":"tem uma bala","resultado_negativo":"Voce ja possui este item"}]}
