@@ -10,12 +10,15 @@ local function getItem(item_table, item_name)
   return nil
 end
 
-local inventory = {}
-local cena_atual = 1
+local jogo = {
+  inventory = {},
+  cena_atual_id = 1
+}
 
-while cena_atual > 0 do
+while jogo.cena_atual_id > 0 do
 
-  print(cenas[cena_atual].descricao)
+  cena_atual = cenas[jogo.cena_atual_id]
+  print(cena_atual.descricao)
 
   comando_correto = false;
   while not comando_correto do
@@ -31,11 +34,11 @@ while cena_atual > 0 do
       
       if table.getn(tokens) == 2 then
         
-        local item = getItem(cenas[cena_atual].itens, tokens[2])
+        local item = getItem(cena_atual.itens, tokens[2])
         
         if item and item.comando_correto == comando then
           print(item.resultado_positivo)
-          cena_atual = item.cena_alvo
+          jogo.cena_atual_id = item.cena_alvo
           comando_correto = true
         else
           print("Comando incorreto.")
@@ -43,12 +46,13 @@ while cena_atual > 0 do
         
       elseif table.getn(tokens) == 4 and tokens[3] == "with" then
         
-        local inv_item = getItem(inventory, tokens[2])
-        local scene_item = getItem(cenas[cena_atual], tokens[4])
+        local inv_item = getItem(jogo.inventory, tokens[2])
+        local scene_item = getItem(cena_atual.itens, tokens[4])
         
         if inv_item and scene_item then
           if scene_item.comando_correto == comando then
-            cena_atual = scene_item.cena_alvo
+            print(scene_item.resultado_positivo)
+            jogo.cena_atual_id = scene_item.cena_alvo
             comando_correto = true
           else
             print("Comando incorreto")
@@ -63,7 +67,7 @@ while cena_atual > 0 do
 
     elseif tokens[1] == "check" then
 
-      item = getItem(cenas[cena_atual].itens, tokens[2])
+      item = getItem(cena_atual.itens, tokens[2])
       
       if item then
         print(item.descricao)
@@ -73,12 +77,12 @@ while cena_atual > 0 do
 
     elseif tokens[1] == "get" then
 
-      item = getItem(cenas[cena_atual].itens, tokens[2])
+      item = getItem(cena_atual.itens, tokens[2])
       if item  and comando == item.comando_correto then
-        if getItem(inventory, item.nome) then
+        if getItem(jogo.inventory, item.nome) then
           print(item.resultado_negativo)
         else
-          table.insert(inventory, item)
+          table.insert(jogo.inventory, item)
           print(item.resultado_positivo)
         end
       else
@@ -87,10 +91,10 @@ while cena_atual > 0 do
 
     elseif comando == "inventory" then
 
-      if next(inventory) == nil then
+      if next(jogo.inventory) == nil then
         print("Inventario vazio")
       else
-        for i, item in pairs(inventory) do
+        for i, item in pairs(jogo.inventory) do
           print(item.nome)
         end
       end

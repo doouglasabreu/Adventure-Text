@@ -222,6 +222,18 @@
 		"titulo": "Assando o JAVALI",
 		"descricao": "Voce se aproxima do JAVALI morto no chao. Sua FOGUEIRA esta quase se apagando." ,
 		"itens": [
+      {
+				"id": 15,
+				"tipo": 0,
+				"nome": "JAVALI",
+				"descricao": "Javali morto",
+				"resultado_positivo": "Voce pegou o javali.",
+				"resultado_negativo": "Voce ja pegou o javali",
+				"comando_correto": "get JAVALI",
+				"cena_alvo": 8,
+				"resolvido": false,
+				"obtido": true
+			},
 			{
 				"id": 15,
 				"tipo": 0,
@@ -244,8 +256,8 @@
 			{
 				"id": 16,
 				"tipo": 0,
-				"nome": "SINALIZADOR",
-				"descricao": "É um sinalizador maritimo",
+				"nome": "HELICOPTERO",
+				"descricao": "E um sinalizador maritimo",
 				"resultado_positivo": "Voce conseguiu alertar o piloto que sobrevoava a area.",
 				"resultado_negativo": "",
 				"comando_correto": "use SINALIZADOR with HELICOPTERO",
